@@ -45,6 +45,13 @@ GLchar* readFile(const char* fileName)
 	return string;
 }
 
+/* channel
+{0: R} {1: G} {2: B} {3: A} */
+uint8_t getPixelValue(void* data, uint32_t width, uint32_t x, uint32_t y, uint8_t channel)
+{
+	return ((uint8_t*)data)[(y * width + x) * 4 + channel];
+}
+
 int main()
 {
 	glfwInit();
@@ -130,6 +137,15 @@ int main()
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
 	glBindTexture(GL_TEXTURE_2D, 0);
+
+
+	printf("R: %03u\nG: %03u\nB: %03u\nA: %03u",
+		getPixelValue(data, width, 7, 0, 0),
+		getPixelValue(data, width, 7, 0, 1),
+		getPixelValue(data, width, 7, 0, 2),
+		getPixelValue(data, width, 7, 0, 3)
+	);
+
 	stbi_image_free(data);
 
 	while (!glfwWindowShouldClose(window))
