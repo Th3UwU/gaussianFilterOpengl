@@ -20,11 +20,15 @@ target_link_directories(
 
 target_link_libraries(
 	${PROJECT_NAME} PRIVATE
-	"lodepng")
+	"cglm"
+	"glew32"
+	"glfw3"
+	"opengl32")
 
 target_compile_definitions(
 	${PROJECT_NAME} PRIVATE
-	GLFW_INCLUDE_NONE)
+	GLFW_INCLUDE_NONE
+	GLEW_STATIC)
 
 target_compile_options(
 	${PROJECT_NAME} PRIVATE
