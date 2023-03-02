@@ -14,11 +14,13 @@ target_include_directories(
 	${PROJECT_NAME} PRIVATE
 	"./include/")
 
-# target_link_libraries(
-#	${PROJECT_NAME} PRIVATE
-#	"glew32"
-#	"glfw3"
-#	"opengl32")
+target_link_directories(
+	${PROJECT_NAME} PRIVATE
+	"./lib/")
+
+target_link_libraries(
+	${PROJECT_NAME} PRIVATE
+	"lodepng")
 
 target_compile_definitions(
 	${PROJECT_NAME} PRIVATE
