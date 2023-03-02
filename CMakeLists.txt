@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.22)
 
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(PROJECT_NAME OPENGL_GAUSS_FILTER)
-project(${PROJECT_NAME} VERSION 1.0 DESCRIPTION "A simple demostration of gaussian blur using opengl" HOMEPAGE_URL "https://github.com/" LANGUAGES C)
+project(${PROJECT_NAME} VERSION 1.0 DESCRIPTION "A simple demostration of gaussian blur using opengl" HOMEPAGE_URL "https://github.com/Th3UwU/gaussianFilterOpengl" LANGUAGES C)
 
 file(GLOB_RECURSE
 	SOURCES CONFIGURE_DEPENDS
@@ -14,11 +14,11 @@ target_include_directories(
 	${PROJECT_NAME} PRIVATE
 	"./include/")
 
-target_link_libraries(
-	${PROJECT_NAME} PRIVATE
-	"glew32"
-	"glfw3"
-	"opengl32")
+# target_link_libraries(
+#	${PROJECT_NAME} PRIVATE
+#	"glew32"
+#	"glfw3"
+#	"opengl32")
 
 target_compile_definitions(
 	${PROJECT_NAME} PRIVATE
